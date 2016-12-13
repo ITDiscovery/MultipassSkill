@@ -1,4 +1,4 @@
-MultipassSkill
+<B>MultipassSkill<B>
 
 Alexa Smart Home Skill that integrates with RPi via MQTT and Shadows
 
@@ -6,7 +6,7 @@ It can be used in conjunction with AlexaPi.
 It born from this case design: http://www.thingiverse.com/thing:1913786
 
 Basic flow is: 
-1. Alexa calls Smart Home Skill "Multipass" (Utterance to Intent): 
+1. Alexa calls Smart Home Skill "Multipass" (Utterance to Intent):
    "Alexa, tell Multipass Power On"
 2. Smart Home Skill "Multipass" converts this to a "Lambda" request:
    "intent":{"name":"Multipass","slots":{"Keys":{"name": "Keys","value":"Power"}}} 
