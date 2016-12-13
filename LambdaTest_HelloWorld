@@ -1,0 +1,32 @@
+{
+  "session": {
+    "sessionId": "SessionId.cbeaab28-a326-4241-a51e-b209972b01ff",
+    "application": {
+      "applicationId": "amzn1.ask.skill.499fb834-7c7a-4f83-8383-4112cb8621a6"
+    },
+    "attributes": {},
+    "user": {
+      "userId": "amzn1.ask.account.AE6VVF7KQI5LMJ6OTKTAAOPTZNUEHOBFIKBOQBVQU2W2WSNQEBQFPOPIJTS6JIXIMTCRIL4G2KUP7DRFO7XGENJFBCB5EYNEVR2XH2V3BGCWWEIV44P7LRVCTPA56E3GOPNAWQISPPMVO4KRSF2LF4KTJSMHOY4TAKII42XVGFSVRPG22VW3WFIQQAAAS6PMNU4ZM6MTDGZYFTQ"
+    },
+    "new": true
+  },
+  "request": {
+    "type": "IntentRequest",
+    "requestId": "EdwRequestId.eefae9da-5451-4b6f-a313-c49c61a20732",
+    "locale": "en-US",
+    "timestamp": "2016-12-11T04:58:25Z",
+    "intent": {
+      "name": "Multipass",
+      "slots": {
+        "Actions": {
+          "name": "Actions"
+        },
+        "Keys": {
+          "name": "Keys",
+          "value": "Power"
+        }
+      }
+    }
+  },
+  "version": "1.0"
+}
