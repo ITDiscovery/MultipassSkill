@@ -1,0 +1,57 @@
+{
+  "intents": [
+    {
+      "intent": "Multipass",
+      "slots": [
+        {
+          "name": "Keys",
+          "type": "LIST_OF_KEYS"
+        }
+        ]
+    },
+    {
+      "intent": "AMAZON.HelpIntent"
+    },
+    {
+      "intent": "AMAZON.StopIntent"
+    },
+    {
+      "intent": "AMAZON.CancelIntent"
+    }
+  ]
+}
+
+LIST_OF_KEYS
+Power
+Ch+
+Ch-
+Vol+
+Vol-
+Mute
+Input
+1
+2
+3
+4
+5
+6
+7
+8
+9
+0
+Enter
+Menu
+Up
+Down
+Left
+Right
+Index
+Caption
+Audio
+
+Sample Utterances:
+Multipass key {Keys}
+Multipass the key {Keys}
+Multipass the key is {Keys}
+Multipass key is {Keys}
+Multipass {Keys}
