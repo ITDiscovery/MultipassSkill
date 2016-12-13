@@ -1,4 +1,4 @@
-<B>MultipassSkill</B>
+<B>MultipassSkill</B> ---Warning!! Not yet complete...
 
 Alexa Smart Home Skill that integrates with RPi via MQTT and Shadows
 
