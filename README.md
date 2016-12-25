@@ -20,6 +20,7 @@ Steps:
 <li>apt-get update and upgrade </li>
 <li>sudo apt-get install git pip </li>
 <li>sudo pip install paho-mqtt </li>
+<li>sudo pip install AWSIoTPythonSDK </li>
 <li>(Opt). Install Alexa-pi if you want via https://github.com/alexa-pi/AlexaPi </li>
 <li>sudo git clone https://github.com/itdiscovery/MultipassSkill</li>
 
