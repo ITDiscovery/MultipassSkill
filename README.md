@@ -18,7 +18,7 @@ to the front (Alexa Home Skill).
 Steps: 
 <ul><li>Base install, config network and raspi-config</li>
 <li>apt-get update and upgrade </li>
-<li>sudo apt-get install git pip </li>
+<li>sudo apt-get install libssl-dev git pip </li>
 <li>sudo pip install paho-mqtt </li>
 <li>sudo pip install AWSIoTPythonSDK </li>
 <li>(Opt). Install Alexa-pi if you want via https://github.com/alexa-pi/AlexaPi </li>
