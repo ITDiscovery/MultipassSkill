@@ -1,6 +1,6 @@
 {
   "session": {
-    "sessionId": "SessionId.cbeaab28-a326-4241-a51e-b209972b01ff",
+    "sessionId": "SessionId.e84b8b6c-befe-49c0-882d-9d7329215d31",
     "application": {
       "applicationId": "amzn1.ask.skill.499fb834-7c7a-4f83-8383-4112cb8621a6"
     },
@@ -12,18 +12,19 @@
   },
   "request": {
     "type": "IntentRequest",
-    "requestId": "EdwRequestId.eefae9da-5451-4b6f-a313-c49c61a20732",
+    "requestId": "EdwRequestId.2083923e-138c-465f-9ecd-dca085703fa4",
     "locale": "en-US",
-    "timestamp": "2016-12-11T04:58:25Z",
+    "timestamp": "2017-01-06T22:01:48Z",
     "intent": {
       "name": "Multipass",
       "slots": {
-        "Actions": {
-          "name": "Actions"
-        },
         "Keys": {
           "name": "Keys",
-          "value": "Power"
+          "value": "Channel"
+        },
+        "Direction": {
+          "name": "Direction",
+          "value": "Up"
         }
       }
     }
