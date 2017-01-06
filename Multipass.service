@@ -1,0 +1,10 @@
+[Unit]
+Description=Multipass AWS Shadow to RPi monitor
+After=multi-user.target
+
+[Service]
+Type=idle
+ExecStart=/usr/bin/python /home/pi/AWSIoT/MultipassPubSub.py > /home/pi/AWSIoT/myscript.log 2>&1
+
+[Install]
+WantedBy=multi-user.target
