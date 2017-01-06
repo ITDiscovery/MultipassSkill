@@ -23,8 +23,8 @@ Steps:
 <li>sudo pip install AWSIoTPythonSDK </li>
 <li>(Opt). Install Alexa-pi if you want via https://github.com/alexa-pi/AlexaPi </li>
 <li>sudo git clone https://github.com/itdiscovery/MultipassSkill</li>
-<li> cd MulitpassSkill</li>
-<li> cp Mul/lib/systemd/system/myscript.service
+<li>cp Multipass.service /lib/systemd/system/Multipass.service</li>
+<li>sudo chmod 644 /lib/systemd/system/Multipass.service</li>
 <li>sudo systemctl daemon-reload</li>
-<li>
+<li>sudo systemctl enable Multipass.service</li>
 
