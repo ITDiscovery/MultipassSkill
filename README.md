@@ -12,10 +12,15 @@ Basic flow is:
 <li>The Lambda function also replies back to the Smart Home Skill with a response: "response":{"outputSpeech {"type":"PlainText","text":"Baa Dah boom"}}</li>
 <li>Python code running on the Rasberry Pi (MultipassPubSub.py) polls the shawdow (and it can be modified to place what the RPi is doing on that or other shadows).</li></ol>
 
-Installation and implementation instructions will start from back (the RPi)
-to the front (Alexa Home Skill).
+Steps for Alexa install:
+<ul><li>Create (if needed, you'd need it for AlexaPi) an Amazon developer account at https://developer.amazon.com</li>
+<li>Navigate to the Alexa Skills page at https://developer.amazon.com/edw/home.html#/skills/list and then add a new skill.</li>
+<li>The Skill Information Page: Give your skill a name and click "No" on the Audio Player section. I captured the Applicaiton ID for my records. </li>
+<li>The Intent Schema Page: Complete this page from the data provided
 
-Steps: 
+</ul>
+
+Steps for RPi Install: 
 <ul><li>Base install, config network and raspi-config</li>
 <li>sudo apt-get update and upgrade </li>
 <li>sudo apt-get install git pip </li>
@@ -28,3 +33,5 @@ Steps:
 <li>sudo systemctl daemon-reload</li>
 <li>sudo systemctl enable Multipass.service</li>
 
+
+</ul>
