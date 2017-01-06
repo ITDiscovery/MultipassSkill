@@ -6,52 +6,24 @@
         {
           "name": "Keys",
           "type": "LIST_OF_KEYS"
+        },
+  		{
+          "name": "Direction",
+          "type": "Dir"
         }
-        ]
-    },
-    {
-      "intent": "AMAZON.HelpIntent"
-    },
-    {
-      "intent": "AMAZON.StopIntent"
-    },
-    {
-      "intent": "AMAZON.CancelIntent"
+	]      
     }
-  ]
+    ]
 }
 
-LIST_OF_KEYS
-Power
-Ch+
-Ch-
-Vol+
-Vol-
-Mute
-Input
-1
-2
-3
-4
-5
-6
-7
-8
-9
-0
-Enter
-Menu
-Up
-Down
-Left
-Right
-Index
-Caption
-Audio
+Custom Slot Types:
+Dir: Up | Down
+LIST_OF_KEYS: Power, Channel, Volume, Mute
 
 Sample Utterances:
-Multipass key {Keys}
-Multipass the key {Keys}
-Multipass the key is {Keys}
-Multipass key is {Keys}
 Multipass {Keys}
+Multipass {Keys} {Direction}
+Multipass press the {Keys}
+Multipass press the {Keys} {Direction}
+Multipass to send the {Keys}
+Multipass to send the {Keys} {Direction}
