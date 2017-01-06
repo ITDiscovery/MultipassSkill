@@ -13,10 +13,17 @@ Basic flow is:
 <li>Python code running on the Rasberry Pi (MultipassPubSub.py) polls the shawdow (and it can be modified to place what the RPi is doing on that or other shadows).</li></ol>
 
 Steps for Alexa install:
-<ul><li>Create (if needed, you'd need it for AlexaPi) an Amazon developer account at https://developer.amazon.com</li>
+<ul>
+
+
+
+<li>Create (if needed, you'd need it for AlexaPi) an Amazon developer account at https://developer.amazon.com</li>
 <li>Navigate to the Alexa Skills page at https://developer.amazon.com/edw/home.html#/skills/list and then add a new skill.</li>
-<li>The Skill Information Page: Give your skill a name and click "No" on the Audio Player section. I captured the Applicaiton ID for my records. </li>
-<li>The Intent Schema Page: Complete this page from the data provided
+<li>The Skill Information page: Give your skill a name and click "No" on the Audio Player section. I captured the Applicaiton ID for my records. </li>
+<li>The Intent Schema page: Complete this page from the data provided in the Interaction_IntentSchema file.</li>
+<li>The Configuration page: The Service Endpoint is "AWS Lambda ARN". The geographic region is "North America", and the ARN is from the Lambda fuction from above. Mark "No" for "Account Linking".</li>
+<li>The Publishing Information page: I marked my the "Category" as "Smart Home", "Testing Instructions" as "Raspberry Pi IR Handler, Requires MultipassPubSub.py running on RPi, run from command line to view commands as they are passed." 
+Countries & Region: is "All countries". Short Skill Description is "Raspberry Pi IR Handler". I used the Thingiverse description for the RPi build in the Full Skill Description. For Example Phrases I used: "Alexa tell Multipass to Power", "Alexa tell Multipass Power", "Alexa ask Multipass Power On". Keywords: "Smart,Home,Raspberry,Pi,Lirc,Implementation". You absolutely have to use</li>
 
 </ul>
 
