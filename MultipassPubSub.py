@@ -30,24 +30,22 @@ import getopt
 
 # Command Line Parameters
 remotenm = "insignia"
-host = "Your Thing Shadow's Rest API Endpoint Goes Here"
+host = "a2le4aywui3vsf.iot.us-east-1.amazonaws.com"
 rootCAPath = "root-CA.crt"
 certificatePath = "Multipass.cert.pem"
 privateKeyPath = "Multipass.private.key"
 topiccmdPath = "$aws/things/Multipass/shadow/command"
 topicstatusPath = "$aws/things/Multipass/shadow/update"
 keepAliveTime = 1200
-IRCommands = ["Power","Ch+","Ch-","Vol+","Vol-","Mute","Input","1","2","3","4",
-	"5","6","7","8","9","0"]
-LIRCKeys = ["POWER","CHANNELUP","CHANNELDOWN","VOLUMEUP","VOLUMEDOWN","MUTE",
-	"ESC","1","2","3","4","5","6","7","8","9","0"]
+IRCommands = ["POWER","CHANNELDOWN","CHANNELUP","VOLUMEDOWN","VOLUMEUP","MUTE"]
+LIRCKeys = ["POWER","CHANNELUP","CHANNELDOWN","VOLUMEUP","VOLUMEDOWN","MUTE"]
 
 # Custom MQTT message callback
 def customCallback(client, userdata, message):
         if message.topic==topiccmdPath:
 		# Received a new command to the shadow (contained in message.payload).
 		# Check the list of commands and map it against an action (or however you want
-		# structure the action portion of the code.
+		# structure the action portion of the code. Here the Lambda code matches the actions
 		for i, lirccmd in enumerate(IRCommands, start=0):
 			if str.upper(IRCommands[i]) in str.upper(message.payload):
 	                        #The command was found, process it via subroutine in this case a remap
