@@ -7,30 +7,55 @@ def lambda_handler(event, context):
     topiccmdPath = "$aws/things/Multipass/shadow/command"
     topicstatusPath = "$aws/things/Multipass/shadow/update"
 
-    IRCommands = ["Power","Ch+","Ch-","Vol+","Vol-","Mute","Input","1","2","3","4","5","6","7",
-                            "8","9","0","Enter","Menu","Up","Down","Left","Right","Index","Caption","Audio"]
+    #AlexaCmds = ["Power","Channel","Volume","Mute"]
+    #AlexaDirs = ["Up","Down"]
+    #IRCmds = ["Power","ChannelUp","ChannelDown","VolumeUp","VolumeDown","Mute"]
     
-    #Check Application ID first
-    if event['session']['application']['applicationId'] == "amzn1.ask.skill.499fb834-7c7a-4f83-8383-4112cb8621a6":
-        if event['request']['type'] == "IntentRequest":
-            SendToShadow = event['request']['intent']['slots']['Keys']['value']
-            #EventType = event['request']['intent']['slots']['Actions']['name']
-            AlexaResp = "Baa Dah boom"
-            
-            # Update the Device Shadow
+    #Check Request Type
+    SendToShadow = ""
+    AlexaResp = ""
+    if event['request']['type'] == "IntentRequest":
+        #Check and convert Alexa to IRCommands
+        KeyStr = event['request']['intent']['slots']['Keys']['value'].decode('utf-8').upper()
+        if KeyStr == "CHANNEL":
+            try:
+                DirStr = event['request']['intent']['slots']['Direction']['value'].decode('utf-8').upper()
+            except:
+                AlexaResp = "Dort"    
+                DirStr = ""
+            if DirStr == "UP":
+                KeyStr = "CHANNELUP"
+            elif DirStr == "DOWN":
+                KeyStr = "CHANNELDOWN"
+            else:
+                AlexaResp = "Dort"
+        elif KeyStr == "VOLUME":
+            try:
+                DirStr = event['request']['intent']['slots']['Direction']['value'].decode('utf-8').upper()
+            except:
+                AlexaResp = "Dort"
+                DirStr = ""
+            if DirStr == "UP":
+                KeyStr = "VOLUMEUP"
+            elif DirStr == "DOWN":
+                KeyStr = "VOLUMEDOWN"
+            else:
+                AlexaResp = "Dort"
+        elif KeyStr == "POWER":
+            KeyStr = "POWER"
+        elif KeyStr == "MUTE":
+            KeyStr = "MUTE"
+        else:
+            # Stanard "Bad" response
+            AlexaResp = "Dort"
+        # Update the Device Shadow if not bad response
+        if AlexaResp != "Dort":
             client = boto3.client('iot-data', region_name='us-east-1')
             #Error Trap this as extra credit
             #response = client.get_thing_shadow(thingName='Multipass')
             SendToShadow = '{"message": "' + SendToShadow + '" }'
             response = client.publish(topic=topiccmdPath,qos=1,payload=SendToShadow)
-    else:
-        AlexaResp = "This appplication is sending data to the wrong lambda function."
-
-    # Standard "OK" response
-    #AlexaResp = "Ba-da-boom"
-    # Stanard "Bad" response
-    #AlexaResp = "Dort"
-    
+            AlexaResp = "Ba-da-boom"
     return (build_response({}, build_speechlet_response(card_title, AlexaResp, None, should_end_session)))
 
 def build_speechlet_response(title, output, reprompt_text, should_end_session):
