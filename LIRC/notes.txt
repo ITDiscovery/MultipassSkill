@@ -1,1 +1,2 @@
-
+For IRSEND
+irsend SEND_ONCE insignia KEY_POWER
